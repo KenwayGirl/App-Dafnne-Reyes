@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F4EF">
+
+    <!-- Contenido Superior desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel de Monitoreo - Tienda"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvEstadoConexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estado: Desconectado (Bluetooth) 🔴"
+                android:textSize="13sp"
+                android:textColor="#222222"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnVincular"
+                android:layout_width="210dp"
+                android:layout_height="55dp"
+                android:text="📡 Vincular Arduino"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:backgroundTint="#435739"
+                android:layout_marginBottom="28dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ESTADO DE SENSORES:"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Iconos sobre las tarjetas como en el mockup -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🚶"
+                    android:textSize="20sp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🔊"
+                    android:textSize="20sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="28dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#7D786D"
+                    android:padding="10dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/tvSensorPir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sensor PIR\nSIN MOVIMIENTO"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#7D786D"
+                    android:padding="10dp"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/tvSensorSonido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sensor Sonido\nNORMAL (Silencio)"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONTROL DE SEGURIDAD:"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="14dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="18dp">
+
+                <Button
+                    android:id="@+id/btnSubirPersiana"
+                    android:layout_width="140dp"
+                    android:layout_height="65dp"
+                    android:text="⬆️ SUBIR\nPERSIANA"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#637338"
+                    android:layout_marginEnd="14dp" />
+
+                <Button
+                    android:id="@+id/btnBajarPersiana"
+                    android:layout_width="140dp"
+                    android:layout_height="65dp"
+                    android:text="⬇️ BAJAR\nPERSIANA"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#B38B45"
+                    android:layout_marginStart="14dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSilenciarAlarma"
+                android:layout_width="190dp"
+                android:layout_height="75dp"
+                android:text="🚨 SILENCIAR / APAGAR\nALARMA"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:backgroundTint="#802F2F" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BARRA DE NAVEGACIÓN INFERIOR (Estilo App INACAP / Mockup) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#D9D9D9"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Pestaña 1: Panel (ACTIVA EN VERDE) -->
+        <LinearLayout
+            android:id="@+id/navPanel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏠🛡️"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#2E6B1E" />
+
+            <View
+                android:layout_width="55dp"
+                android:layout_height="4dp"
+                android:background="#2E6B1E"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Pestaña 2: Historial (INACTIVA) -->
+        <LinearLayout
+            android:id="@+id/navHistorial"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📋🔔"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alertas"
+                android:textSize="11sp"
+                android:textColor="#555555" />
+
+            <View
+                android:layout_width="55dp"
+                android:layout_height="4dp"
+                android:background="#8C857B"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Pestaña 3: Cerrar Sesión -->
+        <LinearLayout
+            android:id="@+id/navSalir"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👤🚪"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salir"
+                android:textSize="11sp"
+                android:textColor="#555555" />
+
+            <View
+                android:layout_width="55dp"
+                android:layout_height="4dp"
+                android:background="#8C857B"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
